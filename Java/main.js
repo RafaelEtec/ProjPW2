@@ -1,10 +1,11 @@
 let título = document.querySelector("#titulo");
 título.textContent = "Etecia Nutrição e Dietética";
 //loop
-for (var i = 0; i < 5; i++) {
-    console.log(i)
+let pacientes = document.querySelectorAll(".paciente");
+
+for (var i = 0; i < pacientes.length; i++) {
+    let paciente = pacientes[i];
     //pegar o peso
-    let paciente = document.querySelector(".paciente");
     let tdpeso = paciente.querySelector(".info-peso");
     let peso = tdpeso.textContent;
 
@@ -28,7 +29,7 @@ for (var i = 0; i < 5; i++) {
     if (pesoValido && alturaValido) {
         //calcular o IMC
         let imc = peso / altura ** 2;
-        console.log();
+        console.log(imc);
 
         //escrever o IMC na tabela
         let tdIMC = paciente.querySelector(".info-imc");
