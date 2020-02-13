@@ -1,5 +1,19 @@
 let título = document.querySelector("#titulo");
 título.textContent = "Etecia Nutrição e Dietética";
+//loop
+for( var i = 0 ; i<5 ; i++ ){
+
+}
+
+
+
+
+
+
+
+
+
+
 
 //pegar o peso
 let paciente = document.querySelector(".paciente");
