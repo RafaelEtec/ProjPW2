@@ -41,6 +41,19 @@ pacientes.forEach(function (paciente){
             tdIMC.textContent = imc.toFixed(2);
         }
 });
+
+let titulo = document.querySelector("#titulo");
+titulo.onclick = mostrarMensagem;
+
+function mostrarMensagem(){
+    console.log("Evento aconteceu");
+}
+function trocarCor(){
+    let corUm = parseInt(Math.random()*255);
+    let corDois = parseInt(Math.random()*255);
+    let corTres = parseInt(Math.random()*255);
+    titulo.style.color = "rgb(" +corUm+ "," +corDois+ "," +corTres+ ")";
+}
         
         
         
