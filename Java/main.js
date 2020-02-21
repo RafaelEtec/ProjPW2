@@ -41,22 +41,40 @@ pacientes.forEach(function (paciente){
             tdIMC.textContent = imc.toFixed(2);
         }
 });
+let botao = document.querySelector("#botao-cadastrar");
 
-let titulo = document.querySelector("#titulo");
-titulo.onclick = mostrarMensagem;
+botao.addEventListener("click", function (evento){
+    evento.preventDefault();
 
-function mostrarMensagem(){
-    console.log("Evento aconteceu");
-}
-function trocarCor(){
-    let corUm = parseInt(Math.random()*255);
-    let corDois = parseInt(Math.random()*255);
-    let corTres = parseInt(Math.random()*255);
-    titulo.style.color = "rgb(" +corUm+ "," +corDois+ "," +corTres+ ")";
-}
-        
-        
-        
-        
-        
-        
+    let formulario = document.querySelector("#form-paciente");
+    let nome = formulario.nome.value;
+    let peso = formulario.peso.value;
+    let altura = formulario.altura.value;
+    let gordura = formulario.gordura.value;
+    console.log(nome, peso, altura, gordura);
+
+    let table = document.querySelector("#tabela-pacientes");
+    let tr = document.createElement("tr");
+    tr.classList.add("paciente");
+
+    let tdNome = document.createElement("td");
+    tdNome.textContent = nome;
+    tr.appendChild(tdNome)
+    
+    let tdPeso = document.createElement("td");
+    tdPeso.textContent = peso;
+    tr.appendChild(tdPeso)
+
+    let tdAltura = document.createElement("td");
+    tdAltura.textContent = altura;
+    tr.appendChild(tdAltura)
+
+    let tdGordura = document.createElement("td");
+    tdGordura.textContent = gordura;
+    tr.appendChild(tdGordura)
+
+    table.appendChild(tr)
+
+    console.log(tr)
+    
+});
